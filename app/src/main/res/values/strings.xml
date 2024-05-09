@@ -3,8 +3,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="team">Команда</string>
     <string name="teamAuthorTitle">Над приложением работали</string>
-    <string name="teamAuthor1">Анна Архиповна Тестирование</string>
-    <string name="teamAuthor2">Ольга Петровна Оценка</string>
-    <string name="teamAuthor3">Вениамин Петрович Дизайн</string>
-    <string name="teamAuthor4">Антон Андроидович</string>
+    <string name="teamAuthor1">Михаил Шумихин</string>
+    <string name="teamAuthor2">Мария Кузнецова</string>
+    <string name="teamAuthor3">Максим Юрищев</string>
+    <string name="teamAuthor4">Денис Кузьмин</string>
 </resources>
