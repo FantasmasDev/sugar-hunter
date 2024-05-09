@@ -7,4 +7,7 @@
     <string name="teamAuthor2">Мария Кузнецова</string>
     <string name="teamAuthor3">Максим Юрищев</string>
     <string name="teamAuthor4">Денис Кузьмин</string>
+    <string name="main">Главная</string>
+    <string name="favourite">Избранное</string>
+    <string name="team">Команда</string>
 </resources>
