@@ -14,8 +14,7 @@ class VacancyViewModel(
 ) : ViewModel() {
 
     private var checkInFavouritesMutableLiveData = MutableLiveData<Boolean>()
-    val checkInFavourites: LiveData<Boolean>
-        get() = checkInFavouritesMutableLiveData
+    fun checkInFavourites() : LiveData<Boolean> = checkInFavouritesMutableLiveData
 
     init {
         viewModelScope.launch {
