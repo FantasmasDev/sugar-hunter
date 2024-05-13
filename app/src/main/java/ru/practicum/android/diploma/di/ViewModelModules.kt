@@ -16,7 +16,7 @@ import ru.practicum.android.diploma.ui.vacancy.VacancyViewModel
 
 val viewModelModules = module {
     viewModel {
-        FavouriteViewModel()
+        FavouriteViewModel(get())
     }
     viewModel {
         CountryViewModel()
