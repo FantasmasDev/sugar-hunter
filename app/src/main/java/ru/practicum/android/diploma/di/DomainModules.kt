@@ -1,19 +1,19 @@
 package ru.practicum.android.diploma.di
 
 import org.koin.dsl.module
-import ru.practicum.android.diploma.data.db.FavoriteDataBaseDataBaseRepositoryImpl
-import ru.practicum.android.diploma.domain.db.FavoriteDataBaseInteractor
-import ru.practicum.android.diploma.domain.db.FavoriteDataBaseInteractorImpl
-import ru.practicum.android.diploma.domain.db.FavoriteDataBaseRepository
+import ru.practicum.android.diploma.data.db.FavouriteDataBaseDataBaseRepositoryImpl
+import ru.practicum.android.diploma.domain.db.FavouriteDataBaseInteractor
+import ru.practicum.android.diploma.domain.db.FavouriteDataBaseInteractorImpl
+import ru.practicum.android.diploma.domain.db.FavouriteDataBaseRepository
 
 val domainModules = module {
 
-    single<FavoriteDataBaseInteractor> {
-        FavoriteDataBaseInteractorImpl(get())
+    single<FavouriteDataBaseInteractor> {
+        FavouriteDataBaseInteractorImpl(get())
     }
 
-    single<FavoriteDataBaseRepository>{
-        FavoriteDataBaseDataBaseRepositoryImpl(get(), get())
+    single<FavouriteDataBaseRepository>{
+        FavouriteDataBaseDataBaseRepositoryImpl(get(), get())
     }
 
 }
