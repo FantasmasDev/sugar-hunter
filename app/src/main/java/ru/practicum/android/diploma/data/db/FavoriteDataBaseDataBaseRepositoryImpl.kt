@@ -1,12 +1,14 @@
 package ru.practicum.android.diploma.data.db
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import ru.practicum.android.diploma.domain.db.FavoriteRepository
+import kotlinx.coroutines.withContext
+import ru.practicum.android.diploma.domain.db.FavoriteDataBaseRepository
 import ru.practicum.android.diploma.domain.models.Vacancy
 
-class FavoriteRepositoryDBImpl(private val database: AppDatabase, private val convertor: Convertor) :
-    FavoriteRepository {
+class FavoriteDataBaseDataBaseRepositoryImpl(private val database: AppDatabase, private val convertor: Convertor) :
+    FavoriteDataBaseRepository {
     override suspend fun addFavouriteVacancy(vacancy: Vacancy) {
         val favouriteVacancy = convertor.mapFromVacancy(vacancy)
         database.favouritesVacanciesDao().insertVacancy(favouriteVacancy)
@@ -15,6 +17,13 @@ class FavoriteRepositoryDBImpl(private val database: AppDatabase, private val co
     override suspend fun deleteFavouriteVacancy(vacancy: Vacancy) {
         val favouriteVacancy = convertor.mapFromVacancy(vacancy)
         database.favouritesVacanciesDao().deleteVacancy(favouriteVacancy)
+    }
+
+    override suspend fun checkIdInFavourites(id: String): Boolean {
+        return withContext(Dispatchers.IO){
+            val favouritesIds = database.favouritesVacanciesDao().getFavoritesIds()
+            favouritesIds.contains(id)
+        }
     }
 
     override fun getFavouritesVacancies(): Flow<List<Vacancy>> = flow {
