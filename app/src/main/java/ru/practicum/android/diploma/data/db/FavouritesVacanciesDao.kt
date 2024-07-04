@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import ru.practicum.android.diploma.data.db.models.FavouriteVacancy
 
 @Dao
 interface FavouritesVacanciesDao {

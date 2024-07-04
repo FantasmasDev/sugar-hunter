@@ -1,5 +1,13 @@
-package ru.practicum.android.diploma.data.dto
+package ru.practicum.android.diploma.data.dto.convertors
 
+import ru.practicum.android.diploma.data.dto.models.IndustryResponse
+import ru.practicum.android.diploma.data.dto.models.LogoUrlsDTO
+import ru.practicum.android.diploma.data.dto.models.SalaryDTO
+import ru.practicum.android.diploma.data.dto.models.SearchResponseDTO
+import ru.practicum.android.diploma.data.dto.models.AreaItemDTO
+import ru.practicum.android.diploma.data.dto.models.ContactsDTO
+import ru.practicum.android.diploma.data.dto.models.DetailsResponse
+import ru.practicum.android.diploma.data.dto.models.KeySkillsDTO
 import ru.practicum.android.diploma.domain.models.Address
 import ru.practicum.android.diploma.domain.models.Areas
 import ru.practicum.android.diploma.domain.models.Contacts

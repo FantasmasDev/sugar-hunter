@@ -4,10 +4,10 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.QueryMap
-import ru.practicum.android.diploma.data.dto.AreaItemDTO
-import ru.practicum.android.diploma.data.dto.DetailsResponse
-import ru.practicum.android.diploma.data.dto.IndustryListDTO
-import ru.practicum.android.diploma.data.dto.SearchResponseDTO
+import ru.practicum.android.diploma.data.dto.models.AreaItemDTO
+import ru.practicum.android.diploma.data.dto.models.DetailsResponse
+import ru.practicum.android.diploma.data.dto.models.IndustryListDTO
+import ru.practicum.android.diploma.data.dto.models.SearchResponseDTO
 
 interface HHApi {
     @GET("vacancies/{vacancy_id}")

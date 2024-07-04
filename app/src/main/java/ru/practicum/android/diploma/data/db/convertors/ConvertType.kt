@@ -1,8 +1,7 @@
-package ru.practicum.android.diploma.data.db
+package ru.practicum.android.diploma.data.db.convertors
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
-import ru.practicum.android.diploma.data.dto.AreaDTO
 import ru.practicum.android.diploma.domain.models.Address
 import ru.practicum.android.diploma.domain.models.Contacts
 import ru.practicum.android.diploma.domain.models.Employment
@@ -12,16 +11,6 @@ import ru.practicum.android.diploma.domain.models.Salary
 import ru.practicum.android.diploma.domain.models.Schedule
 
 class ConvertType {
-
-    @TypeConverter
-    fun stringToArea(value: String): AreaDTO? {
-        return Gson().fromJson(value, AreaDTO::class.java)
-    }
-
-    @TypeConverter
-    fun areaToString(area: AreaDTO?): String {
-        return Gson().toJson(area)
-    }
 
     @TypeConverter
     fun stringToLogoUrls(value: String): LogoUrls? {

@@ -1,5 +1,6 @@
-package ru.practicum.android.diploma.data.db
+package ru.practicum.android.diploma.data.db.convertors
 
+import ru.practicum.android.diploma.data.db.models.FavouriteVacancy
 import ru.practicum.android.diploma.domain.models.VacancyDetails
 
 class Convertor {

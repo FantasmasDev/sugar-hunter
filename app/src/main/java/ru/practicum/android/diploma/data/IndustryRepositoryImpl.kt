@@ -4,7 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import ru.practicum.android.diploma.data.dto.DTOToDataMappers
+import ru.practicum.android.diploma.data.dto.convertors.DTOToDataMappers
 import ru.practicum.android.diploma.data.network.NetworkClient
 import ru.practicum.android.diploma.domain.IndustryRepository
 import ru.practicum.android.diploma.domain.models.Industry
