@@ -6,10 +6,10 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import ru.practicum.android.diploma.data.dto.AreasDictionaryDTO
-import ru.practicum.android.diploma.data.dto.DetailsResponse
-import ru.practicum.android.diploma.data.dto.IndustryResponse
-import ru.practicum.android.diploma.data.dto.SearchResponseDTO
+import ru.practicum.android.diploma.data.dto.models.AreasDictionaryDTO
+import ru.practicum.android.diploma.data.dto.models.DetailsResponse
+import ru.practicum.android.diploma.data.dto.models.IndustryResponse
+import ru.practicum.android.diploma.data.dto.models.SearchResponseDTO
 import ru.practicum.android.diploma.domain.models.Resource
 import java.io.IOException
 

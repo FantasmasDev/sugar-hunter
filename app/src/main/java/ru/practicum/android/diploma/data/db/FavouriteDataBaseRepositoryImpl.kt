@@ -4,6 +4,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
+import ru.practicum.android.diploma.data.db.convertors.Convertor
+import ru.practicum.android.diploma.data.db.models.FavouriteVacancy
 import ru.practicum.android.diploma.domain.db.FavouriteDataBaseRepository
 import ru.practicum.android.diploma.domain.models.VacancyDetails
 

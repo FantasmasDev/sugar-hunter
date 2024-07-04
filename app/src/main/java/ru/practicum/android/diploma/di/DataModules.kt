@@ -8,10 +8,9 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.practicum.android.diploma.BuildConfig
-import ru.practicum.android.diploma.data.ExternalNavigator
 import ru.practicum.android.diploma.data.db.AppDatabase
-import ru.practicum.android.diploma.data.db.Convertor
-import ru.practicum.android.diploma.data.dto.DTOToDataMappers
+import ru.practicum.android.diploma.data.db.convertors.Convertor
+import ru.practicum.android.diploma.data.dto.convertors.DTOToDataMappers
 import ru.practicum.android.diploma.data.filtres.FiltersStorage
 import ru.practicum.android.diploma.data.network.HHApi
 import ru.practicum.android.diploma.data.network.NetworkClient
@@ -33,8 +32,6 @@ val dataModules = module {
                 .build()
         ).build().create(HHApi::class.java)
     }
-
-    single { ExternalNavigator(context = androidContext()) }
 
     factory { Convertor() }
     single { DTOToDataMappers() }
