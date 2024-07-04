@@ -1,13 +1,13 @@
 package ru.practicum.android.diploma.data.dto.convertors
 
-import ru.practicum.android.diploma.data.dto.models.IndustryResponse
-import ru.practicum.android.diploma.data.dto.models.LogoUrlsDTO
-import ru.practicum.android.diploma.data.dto.models.SalaryDTO
-import ru.practicum.android.diploma.data.dto.models.SearchResponseDTO
 import ru.practicum.android.diploma.data.dto.models.AreaItemDTO
 import ru.practicum.android.diploma.data.dto.models.ContactsDTO
 import ru.practicum.android.diploma.data.dto.models.DetailsResponse
+import ru.practicum.android.diploma.data.dto.models.IndustryResponse
 import ru.practicum.android.diploma.data.dto.models.KeySkillsDTO
+import ru.practicum.android.diploma.data.dto.models.LogoUrlsDTO
+import ru.practicum.android.diploma.data.dto.models.SalaryDTO
+import ru.practicum.android.diploma.data.dto.models.SearchResponseDTO
 import ru.practicum.android.diploma.domain.models.Address
 import ru.practicum.android.diploma.domain.models.Areas
 import ru.practicum.android.diploma.domain.models.Contacts
@@ -53,6 +53,7 @@ class DTOToDataMappers {
                 street = vacancy.address?.street
             )
         )
+
     private fun mapContactsDTOToContacts(contacts: ContactsDTO?) =
         Contacts(
             email = contacts?.email,
@@ -68,6 +69,7 @@ class DTOToDataMappers {
                 phones
             }
         )
+
     fun mapSearchResponseToVacanciesResponse(data: SearchResponseDTO) =
         VacanciesResponse(
             page = data.page,
@@ -85,6 +87,7 @@ class DTOToDataMappers {
                 vacancy
             }
         )
+
     fun industryResponseToIndustries(data: IndustryResponse) =
         data.container.map {
             val industries = Industry(
@@ -97,27 +100,32 @@ class DTOToDataMappers {
     fun areasDictionaryToList(areasDictionary: List<AreaItemDTO>): List<Areas> {
         val result = mutableListOf<Areas>()
         for (areaItem in areasDictionary) {
-            result.add(Areas(
-                id = areaItem.id,
-                name = areaItem.name,
-                parentId = areaItem.parentId,
-                countryName = areaItem.name
-            ))
+            result.add(
+                Areas(
+                    id = areaItem.id,
+                    name = areaItem.name,
+                    parentId = areaItem.parentId,
+                    countryName = areaItem.name
+                )
+            )
             if (areaItem.areas.isNotEmpty()) {
                 result.addAll(setCountry(areaItem.areas, areaItem.name, areaItem.id))
             }
         }
         return result
     }
+
     private fun setCountry(areasDictionary: List<AreaItemDTO>, countryName: String, countryId: String): List<Areas> {
         val result = mutableListOf<Areas>()
         for (areaItem in areasDictionary) {
-            result.add(Areas(
-                id = areaItem.id,
-                name = areaItem.name,
-                parentId = countryId,
-                countryName = countryName
-            ))
+            result.add(
+                Areas(
+                    id = areaItem.id,
+                    name = areaItem.name,
+                    parentId = countryId,
+                    countryName = countryName
+                )
+            )
             if (areaItem.areas.isNotEmpty()) {
                 result.addAll(setCountry(areaItem.areas, countryName, countryId))
             }
@@ -132,11 +140,13 @@ class DTOToDataMappers {
             currency = salary?.currency,
             gross = salary?.gross
         )
+
     private fun mapLogoUrlsDTOToLogoUrls(logoUrls: LogoUrlsDTO?) =
         LogoUrls(
             logo90 = logoUrls?.logo90,
             logo240 = logoUrls?.logo240
         )
+
     private fun skillsMapper(list: List<KeySkillsDTO>?): List<String>? {
         if (list.isNullOrEmpty()) {
             return null
